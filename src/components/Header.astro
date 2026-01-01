@@ -1,5 +1,4 @@
 ---
-import Logo from "../components/Logo.astro";
 
 const navItems = [
   { text: "HOME", href: "/" },
@@ -57,8 +56,13 @@ const navItems = [
       <div class="flex items-center justify-between py-5">
         <!-- logo -->
         <a href="/" class="flex items-center gap-3">
-          <Logo />
-        </a>
+  <img
+    src="/logo.png"
+    alt="ironcore SEC"
+    class="h-12 w-auto object-contain"
+  />
+</a>
+
 
         <!-- nav links -->
         <nav class="hidden items-center gap-8 md:flex">
