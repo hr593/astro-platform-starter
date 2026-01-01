@@ -1,13 +1,11 @@
 ---
 import Logo from "../components/Logo.astro";
 
----
----
 const navItems = [
   { text: "HOME", href: "/" },
   { text: "ABOUT US", href: "/about" },
-  { text: "SERVICES", href: "/services", hasDropdown: true },
-  { text: "SECTORS", href: "/sectors", hasDropdown: true },
+  { text: "SERVICES", href: "/services", dropdown: true },
+  { text: "SECTORS", href: "/sectors", dropdown: true },
   { text: "WORK FOR US", href: "/work-for-us" },
   { text: "BLOG", href: "/blog" },
   { text: "CONTACT US", href: "/contact" },
@@ -15,92 +13,103 @@ const navItems = [
 ---
 
 <header class="w-full">
-  <!-- Top blue bar -->
-  <div class="w-full bg-[#163b66] text-white">
-    <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-2 sm:px-12">
-      <a href="#" class="text-xs font-semibold tracking-widest uppercase hover:opacity-90">
-        CLICK HERE FOR CURRENT NATIONAL THREAT LEVEL
-      </a>
-
-      <div class="hidden items-center gap-6 text-sm sm:flex">
-        <a href="tel:02088996959" class="flex items-center gap-2 hover:opacity-90">
-          <!-- phone icon -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.59a1 1 0 01-.25 1.01l-2.2 2.19z"/>
-          </svg>
-          020 8899 6959
+  <!-- TOP BAR -->
+  <div class="bg-[#133a63] text-white">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between">
+        <!-- left/center message -->
+        <a
+          href="#"
+          class="text-center text-[12px] font-semibold tracking-[0.12em] uppercase hover:opacity-90 sm:text-left"
+        >
+          CLICK HERE FOR CURRENT NATIONAL THREAT LEVEL
         </a>
 
-        <a href="mailto:hello@kingfishersec.com" class="flex items-center gap-2 hover:opacity-90">
-          <!-- mail icon -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          hello@kingfishersec.com
-        </a>
+        <!-- right contact -->
+        <div class="flex items-center justify-center gap-6 text-[13px] sm:justify-end">
+          <a href="tel:02088996959" class="flex items-center gap-2 hover:opacity-90">
+            <!-- phone icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"
+              />
+            </svg>
+            <span class="font-semibold">020 8899 6959</span>
+          </a>
+
+          <a href="mailto:hello@kingfishersec.com" class="flex items-center gap-2 hover:opacity-90">
+            <!-- mail icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            <span class="font-semibold">hello@kingfishersec.com</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Main white nav -->
-  <div class="w-full bg-white text-[#0b1b2b] shadow-sm">
-    <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-12">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-3">
-        <!-- simple placeholder logo mark -->
-        <div class="h-10 w-10 rounded bg-[#163b66]"></div>
-        <div class="leading-tight">
-          <div class="text-lg font-bold tracking-widest">KINGFISHER SEC</div>
-          <div class="text-[10px] tracking-widest text-[#e28a2b]">SECURITY • EVENTS • CONCIERGE</div>
-        </div>
-      </a>
+  <!-- MAIN NAV -->
+  <div class="bg-white">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center justify-between py-5">
+        <!-- logo -->
+        <a href="/" class="flex items-center gap-3">
+          <Logo />
+        </a>
 
-      <!-- Nav links -->
-      <nav class="hidden items-center gap-7 lg:flex">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="relative text-sm font-semibold tracking-wider hover:text-[#e28a2b]"
-          >
-            <span class="inline-flex items-center gap-1">
-              {item.text}
-              {item.hasDropdown ? (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="opacity-70">
-                  <path d="M7 10l5 5 5-5H7z"/>
-                </svg>
-              ) : null}
-            </span>
-          </a>
-        ))}
-      </nav>
-
-      <!-- Login button -->
-      <a
-        href="/login"
-        class="inline-flex items-center gap-2 rounded bg-[#e28a2b] px-5 py-3 text-sm font-bold text-white hover:opacity-95"
-      >
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-white/20">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M10 17l1.41-1.41L8.83 13H21v-2H8.83l2.58-2.59L10 7l-7 7 7 7zm-7 4h8v-2H3V5h8V3H3a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-          </svg>
-        </span>
-        LOGIN
-      </a>
-    </div>
-
-    <!-- mobile nav (simple) -->
-    <div class="block border-t border-black/10 lg:hidden">
-      <div class="mx-auto w-full max-w-6xl px-6 py-3 sm:px-12">
-        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold tracking-wider">
+        <!-- nav links -->
+        <nav class="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <a href={item.href} class="hover:text-[#e28a2b]">
-              {item.text}
+            <a
+              href={item.href}
+              class={`relative text-[12px] font-semibold tracking-[0.12em] uppercase text-[#1f2a44] hover:text-[#f29b34]
+                ${item.text === "HOME" ? "text-[#f29b34]" : ""}`}
+            >
+              <span class="inline-flex items-center gap-2">
+                {item.text}
+                {item.dropdown && (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="opacity-70">
+                    <path d="M7 10l5 5 5-5z" />
+                  </svg>
+                )}
+              </span>
+
+              <!-- active underline like screenshot -->
+              {item.text === "HOME" && (
+                <span class="absolute left-0 -bottom-3 h-[2px] w-full bg-[#f29b34]"></span>
+              )}
             </a>
           ))}
-        </div>
+        </nav>
+
+        <!-- login button -->
+        <a
+          href="/login"
+          class="hidden items-center gap-3 rounded-md bg-[#f29b34] px-5 py-3 text-[12px] font-bold tracking-[0.12em] uppercase text-white shadow-sm hover:brightness-95 md:inline-flex"
+        >
+          <!-- small icon -->
+          <span class="grid h-7 w-7 place-items-center rounded bg-white/15">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M10 17l5-5-5-5v10z" />
+              <path d="M19 3h-7a2 2 0 0 0-2 2v2h2V5h7v14h-7v-2h-2v2a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
+            </svg>
+          </span>
+          LOGIN
+        </a>
+
+        <!-- mobile menu button (optional) -->
+        <button
+          class="inline-flex items-center justify-center rounded-md p-2 text-[#1f2a44] hover:bg-slate-100 md:hidden"
+          aria-label="Open menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </header>
-
-
