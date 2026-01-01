@@ -23,15 +23,19 @@ const { title } = Astro.props;
     <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
   </head>
 
-  <body class="antialiased text-white bg-complementary">
+  <body class="antialiased bg-complementary">
     <div class="min-h-screen bg-noise">
-      <!-- ✅ FULL WIDTH HEADER -->
+      <!-- Full width header -->
       <Header />
 
-      <!-- ✅ PAGE CONTENT CONTAINER -->
+      <!-- ✅ Full width page content (Hero yahan full width hoga) -->
+      <main>
+        <slot />
+      </main>
+
+      <!-- Footer (container) -->
       <div class="px-6 sm:px-12">
-        <div class="flex flex-col w-full max-w-5xl mx-auto min-h-[calc(100vh-120px)]">
-          <main class="grow"><slot /></main>
+        <div class="w-full max-w-5xl mx-auto">
           <Footer />
         </div>
       </div>
