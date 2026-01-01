@@ -1,5 +1,4 @@
 ---
-
 const navItems = [
   { text: "HOME", href: "/" },
   { text: "ABOUT US", href: "/about" },
@@ -16,19 +15,17 @@ const navItems = [
   <div class="bg-[#133a63] text-white">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between">
-        <!-- left/center message -->
+        <!-- left/center message (NO underline) -->
         <a
-  href="#"
-  class="no-underline text-center text-[12px] font-semibold tracking-[0.12em] uppercase hover:opacity-90 sm:text-left"
->
-  CLICK HERE FOR CURRENT NATIONAL THREAT LEVEL
-</a>
-
+          href="#"
+          class="text-center text-[12px] font-semibold tracking-[0.12em] uppercase hover:opacity-90 sm:text-left no-underline"
+        >
+          CLICK HERE FOR CURRENT NATIONAL THREAT LEVEL
+        </a>
 
         <!-- right contact -->
         <div class="flex items-center justify-center gap-6 text-[13px] sm:justify-end">
-          <a href="tel:02088996959" class="no-underline flex items-center gap-2 hover:opacity-90">
-            <!-- phone icon -->
+          <a href="tel:02088996959" class="flex items-center gap-2 hover:opacity-90 no-underline">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"
@@ -37,8 +34,7 @@ const navItems = [
             <span class="font-semibold">020 8899 6959</span>
           </a>
 
-          <a href="contact@ironcoresecurity.co.uk" class=" no-underline flex items-center gap-2 hover:opacity-90">
-            <!-- mail icon -->
+          <a href="mailto:contact@ironcoresecurity.co.uk" class="flex items-center gap-2 hover:opacity-90 no-underline">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
@@ -52,25 +48,20 @@ const navItems = [
   </div>
 
   <!-- MAIN NAV -->
-  <div class="bg-white">
+  <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between py-5">
-        <!-- logo -->
-        <a href="/" class="flex items-center gap-3">
-  <img
-    src="/logo.png"
-    alt="ironcore SEC"
-    class="h-12 w-auto object-contain"
-  />
-</a>
-
+        <!-- ✅ logo.png from /public -->
+        <a href="/" class="flex items-center gap-3 no-underline">
+          <img src="/logo.png" alt="Ironcore Security" class="h-10 w-auto" />
+        </a>
 
         <!-- nav links -->
         <nav class="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <a
               href={item.href}
-              class={`relative text-[12px] font-semibold tracking-[0.12em] uppercase text-[#1f2a44] hover:text-[#f29b34]
+              class={`relative text-[12px] font-semibold tracking-[0.12em] uppercase text-[#1f2a44] hover:text-[#f29b34] no-underline
                 ${item.text === "HOME" ? "text-[#f29b34]" : ""}`}
             >
               <span class="inline-flex items-center gap-2">
@@ -82,7 +73,6 @@ const navItems = [
                 )}
               </span>
 
-              <!-- active underline like screenshot -->
               {item.text === "HOME" && (
                 <span class="absolute left-0 -bottom-3 h-[2px] w-full bg-[#f29b34]"></span>
               )}
@@ -90,9 +80,9 @@ const navItems = [
           ))}
         </nav>
 
-    
+        <!-- ✅ login button removed -->
 
-        <!-- mobile menu button (optional) -->
+        <!-- mobile menu button -->
         <button
           class="inline-flex items-center justify-center rounded-md p-2 text-[#1f2a44] hover:bg-slate-100 md:hidden"
           aria-label="Open menu"
