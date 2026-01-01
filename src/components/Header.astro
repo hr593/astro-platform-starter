@@ -1,115 +1,105 @@
 ---
 import Logo from "../components/Logo.astro";
 
+---
 const navItems = [
-  { text: "HOME", href: "/" },
-  { text: "ABOUT US", href: "/about" },
-  { text: "SERVICES", href: "/services", dropdown: true },
-  { text: "SECTORS", href: "/sectors", dropdown: true },
-  { text: "WORK FOR US", href: "/work-for-us" },
-  { text: "BLOG", href: "/blog" },
-  { text: "CONTACT US", href: "/contact" },
+  { label: 'HOME', href: '/' },
+  { label: 'ABOUT US', href: '/about' },
+  { label: 'SERVICES', href: '/services' },
+  { label: 'SECTORS', href: '/sectors' },
+  { label: 'WORK FOR US', href: '/careers' },
+  { label: 'BLOG', href: '/blog' },
+  { label: 'CONTACT US', href: '/contact' },
 ];
 ---
 
 <header class="w-full">
-  <!-- TOP BAR -->
-  <div class="bg-[#133a63] text-white">
-<div class="w-full px-8">
-      <div class="flex flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between">
-        <!-- left/center message -->
-        <a
-          href="#"
-          class="text-center text-[12px] font-semibold tracking-[0.12em] uppercase hover:opacity-90 sm:text-left"
-        >
-          CLICK HERE FOR CURRENT NATIONAL THREAT LEVEL
+  <!-- Top strip (full width) -->
+  <div class="w-full bg-[#173B63] text-white">
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-2 sm:px-12">
+      <a href="#" class="text-[12px] font-semibold tracking-widest uppercase underline underline-offset-4">
+        CLICK HERE FOR CURRENT NATIONAL THREAT LEVEL
+      </a>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="tel:02088996959" class="flex items-center gap-2 font-semibold">
+          <!-- phone icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5A2.25 2.25 0 0 0 21 19.5v-3.056a2.25 2.25 0 0 0-1.72-2.186l-3.12-.78a2.25 2.25 0 0 0-2.265.832l-.96 1.2a12.06 12.06 0 0 1-5.516-5.516l1.2-.96a2.25 2.25 0 0 0 .832-2.265l-.78-3.12A2.25 2.25 0 0 0 6.306 1.5H3.75A2.25 2.25 0 0 0 1.5 3.75v3z"/>
+          </svg>
+          020 8899 6959
         </a>
 
-        <!-- right contact -->
-        <div class="flex items-center justify-center gap-6 text-[13px] sm:justify-end">
-          <a href="tel:02088996959" class="flex items-center gap-2 hover:opacity-90">
-            <!-- phone icon -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"
-              />
-            </svg>
-            <span class="font-semibold">020 8899 6959</span>
-          </a>
+        <a href="mailto:hello@kingfishersec.com" class="flex items-center gap-2 font-semibold">
+          <!-- mail icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M1.5 8.67v10.83A2.25 2.25 0 0 0 3.75 21.75h16.5A2.25 2.25 0 0 0 22.5 19.5V8.67l-9.54 6.36a1.5 1.5 0 0 1-1.92 0L1.5 8.67z"/>
+            <path d="M22.5 6.75A2.25 2.25 0 0 0 20.25 4.5H3.75A2.25 2.25 0 0 0 1.5 6.75l10.17 6.78a.75.75 0 0 0 .96 0L22.5 6.75z"/>
+          </svg>
+          hello@kingfishersec.com
+        </a>
+      </div>
+    </div>
+  </div>
 
-          <a href="mailto:hello@kingfishersec.com" class="flex items-center gap-2 hover:opacity-90">
-            <!-- mail icon -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
-              />
-            </svg>
-            <span class="font-semibold">hello@kingfishersec.com</span>
+  <!-- Main navbar (full width white) -->
+  <div class="w-full bg-white">
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 sm:px-12">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <!-- Placeholder logo box (replace with your image/svg) -->
+        <div class="h-10 w-10 rounded bg-[#173B63]/10"></div>
+        <div class="leading-tight">
+          <div class="text-lg font-extrabold tracking-wide text-[#173B63]">KINGFISHER SEC</div>
+          <div class="text-[10px] font-semibold tracking-widest text-orange-500">SECURITY • EVENTS • CONCIERGE</div>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden items-center gap-8 md:flex">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-semibold tracking-wide text-[#173B63] hover:text-orange-500"
+          >
+            {item.label}
           </a>
+        ))}
+      </nav>
+
+      <!-- Right (Login) -->
+      <div class="flex items-center gap-3">
+        <a
+          href="/login"
+          class="inline-flex items-center gap-2 rounded bg-orange-500 px-5 py-3 text-sm font-bold text-white hover:bg-orange-600"
+        >
+          <!-- login icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6A2.25 2.25 0 0 0 5.25 5.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15"/>
+            <path d="M18 15l3-3m0 0l-3-3m3 3H9"/>
+          </svg>
+          LOGIN
+        </a>
+
+        <!-- Mobile menu button (optional) -->
+        <button class="md:hidden rounded border border-slate-200 px-3 py-2 text-slate-700">
+          Menu
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav (simple) -->
+    <div class="border-t border-slate-100 md:hidden">
+      <div class="mx-auto w-full max-w-6xl px-6 py-3 sm:px-12">
+        <div class="flex flex-wrap gap-x-6 gap-y-3">
+          {navItems.map((item) => (
+            <a href={item.href} class="text-sm font-semibold text-[#173B63] hover:text-orange-500">
+              {item.label}
+            </a>
+          ))}
         </div>
       </div>
     </div>
   </div>
-
-  <!-- MAIN NAV -->
-  <div class="bg-white">
-<div class="w-full px-10">
-      <div class="flex items-center justify-between py-5">
-        <!-- logo -->
-        <a href="/" class="flex items-center gap-3">
-          <Logo />
-        </a>
-
-        <!-- nav links -->
-        <nav class="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
-            <a
-              href={item.href}
-              class={`relative text-[12px] font-semibold tracking-[0.12em] uppercase text-[#1f2a44] hover:text-[#f29b34]
-                ${item.text === "HOME" ? "text-[#f29b34]" : ""}`}
-            >
-              <span class="inline-flex items-center gap-2">
-                {item.text}
-                {item.dropdown && (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="opacity-70">
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                )}
-              </span>
-
-              <!-- active underline like screenshot -->
-              {item.text === "HOME" && (
-                <span class="absolute left-0 -bottom-3 h-[2px] w-full bg-[#f29b34]"></span>
-              )}
-            </a>
-          ))}
-        </nav>
-
-        <!-- login button -->
-        <a
-          href="/login"
-          class="hidden items-center gap-3 rounded-md bg-[#f29b34] px-5 py-3 text-[12px] font-bold tracking-[0.12em] uppercase text-white shadow-sm hover:brightness-95 md:inline-flex"
-        >
-          <!-- small icon -->
-          <span class="grid h-7 w-7 place-items-center rounded bg-white/15">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M10 17l5-5-5-5v10z" />
-              <path d="M19 3h-7a2 2 0 0 0-2 2v2h2V5h7v14h-7v-2h-2v2a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
-            </svg>
-          </span>
-          LOGIN
-        </a>
-
-        <!-- mobile menu button (optional) -->
-        <button
-          class="inline-flex items-center justify-center rounded-md p-2 text-[#1f2a44] hover:bg-slate-100 md:hidden"
-          aria-label="Open menu"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
 </header>
+
